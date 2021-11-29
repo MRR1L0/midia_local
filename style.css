@@ -1,0 +1,100 @@
+
+      #map {
+        height: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #323232;
+        border: none;
+      }
+      #cadastro-container{
+        z-index: 1000;
+        top: 0px;
+        right: 50vh;
+        position: absolute;
+        background-color: rgb(231, 231, 231);
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 30px;
+        margin-top: 10vh;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      }
+      form{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        
+      }
+      label,input{
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+      input{
+        border-bottom: 2px solid #323232;
+        padding: 10px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      input:focus{
+        border-bottom: 2px solid #08558b;
+      }
+    input[type="submit"]{
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      height: 40px;
+      border-radius: 20px;
+      color: darkgreen;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover{
+      background-color: springgreen;
+      transition: .5s;
+    }
+    .btn{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 300;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      color: white;
+      border-radius: 20px;
+    }
+    .btn-blue{
+      background-color: #08558b;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      position: absolute;
+      bottom: 50px;}
+    .btn:active{
+      background-color: royalblue;
+      transition: .5s;
+    }
+  
+  .table{
+        z-index: 1000;
+        top: 0px;
+        right: 20vh;
+        position: absolute;
+        background-color: rgb(231, 231, 231);
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 30px;
+        margin-top: 10vh;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
