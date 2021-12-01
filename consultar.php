@@ -9,7 +9,6 @@
     $lin = mysqli_num_rows($res);
 
    
-    
-
+ 
     
 ?>

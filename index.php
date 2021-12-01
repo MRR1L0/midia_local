@@ -1,5 +1,5 @@
 <?php
-  include "consultar.php";
+  include 'conexao.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
         <input type="text" name="lng" id="longitude" required="required">
         <label for="descricao">descrição</label>
         <input type="text" name="descricao" id="descricao" required="required">
-        <input type="submit" value="Cadastrar" >
+        <input type="submit" value="Cadastrar" onclick="" >
       </form>
     </div>
     <div id="pesquisar">
@@ -33,7 +33,6 @@
     <thead class="thead-dark">
       <tr>
       <th scope="col">Localizar</th>
-        <th scope="col">Editar</th>
         <th scope="col">Apagar</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
@@ -41,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php
+<?php
 
       $sql = "SELECT * FROM  rota";
       $res = mysqli_query($conexao,$sql);
@@ -52,12 +51,15 @@
           $longitude = $reg[2];
           $descricao = $reg[3];
   
-          echo "<tr class='linhas'>";
-          echo "<td></td><td></td><td></td><td>$latitude</td><td>$longitude</td><td>$descricao</td>";
+          echo "<tr>";
+          echo "<td><button class='btn_localizar' id='localizar'>localizar</button></td>";
+          echo "<td><button class='btn_apagar' id='apagar' onclick='deletar()'>apagar</button></td>";
+          echo "<td>$latitude</td><td>$longitude</td><td>$descricao</td>";
           echo "</tr>";
       }
-      
-  ?>
+
+?>
+
     </tbody>
   </table>
   </div>

@@ -24,18 +24,20 @@ function initMap() {
     }else{
       container.style.display = 'none'
     }
+    
     latitude.value = lat;
     longitude.value = lng;
   });
 }
 
 function consultar(){
-  let container = document.getElementById("tbl_consulta");
-  if(container.style.display === 'none'){
-    container.style.display = 'block'
+  let tbl = document.getElementById("tbl_consulta");
+  if(tbl.style.display === 'none'){
+    tbl.style.display = 'block'
   }else{
-    container.style.display = 'none'
+    tbl.style.display = 'none'
   }
+  
 }
 
 
