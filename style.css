@@ -29,6 +29,7 @@
         margin-top: 10vh;
         border-radius: 20px;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        display: none;
       }
       form{
         margin-top: 30px;
@@ -96,10 +97,8 @@
         padding: 20px 30px;
         margin-top: 10vh;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        
-        
   }
-  #apagar{
+  .apagar{
     background-color: firebrick;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -107,11 +106,11 @@
     border-radius: 20px;
     padding: 10px;
   }
-  #apagar:hover{
+  .apagar:hover{
     background-color: crimson;
     transition: .5s;
   }
-  #localizar{
+  .localizar{
     background-color: #08558b;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -119,7 +118,7 @@
     border-radius: 20px;
     padding: 10px;
   }
-  #localizar:hover{
+  .localizar:hover{
     background-color: rgb(20, 147, 220);
     transition: .5s;
   }

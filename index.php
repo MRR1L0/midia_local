@@ -1,5 +1,6 @@
 <?php
-  include 'conexao.php';
+  session_start();
+  include "conexao.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@
         <input type="text" name="lng" id="longitude" required="required">
         <label for="descricao">descrição</label>
         <input type="text" name="descricao" id="descricao" required="required">
-        <input type="submit" value="Cadastrar" onclick="" >
+        <input type="submit" value="Cadastrar" >
       </form>
     </div>
     <div id="pesquisar">
@@ -37,10 +38,11 @@
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Descricao</th>
+        <th scope="col">ID</th>
       </tr>
     </thead>
     <tbody>
-<?php
+      <?php
 
       $sql = "SELECT * FROM  rota";
       $res = mysqli_query($conexao,$sql);
@@ -50,20 +52,19 @@
           $latitude = $reg[1];
           $longitude = $reg[2];
           $descricao = $reg[3];
+          $id = $reg[0];
   
-          echo "<tr>";
-          echo "<td><button class='btn_localizar' id='localizar'>localizar</button></td>";
-          echo "<td><button class='btn_apagar' id='apagar' onclick='deletar()'>apagar</button></td>";
-          echo "<td>$latitude</td><td>$longitude</td><td>$descricao</td>";
+          echo "<tr class='linhas'>";
+          echo "<td><button class='localizar' onclick='localizar($latitude,$longitude)'>localizar</button></td>";
+          echo "<td><a href='deletar.php?id=".$id."' class='apagar'>apagar</a></td>";
+          echo "<td>$latitude</td><td>$longitude</td><td>$descricao</td><td>$id</td>";
           echo "</tr>";
       }
-
-?>
-
+      
+  ?>
     </tbody>
   </table>
   </div>
-  
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbKs_zBvbMG1kSK7Ffw3usDcu7fGkXF_g&callback=initMap&v=weekly"
       async
@@ -71,6 +72,25 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+  function localizar(lat,lng){
+    initMap();
+    pos = { lat: lat, lng: lng };
+    map.setCenter(pos);
+    const marker = new google.maps.Marker({
+    position:pos,
+    map: map,
+    
+  });
+   ;
+   
+  let container = document.getElementById("tbl_consulta");
+    if(container.style.display === 'none'){
+      container.style.display = 'block'
+    }else{
+      container.style.display = 'none'
+    }
+  }</script>
   </body>
 
   </html>
